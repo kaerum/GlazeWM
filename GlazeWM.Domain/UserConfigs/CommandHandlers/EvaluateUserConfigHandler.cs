@@ -172,7 +172,8 @@ namespace GlazeWM.Domain.UserConfigs.CommandHandlers
           var hasMatchingRegex =
             windowRuleConfig.MatchClassName is not null ||
             windowRuleConfig.MatchProcessName is not null ||
-            windowRuleConfig.MatchTitle is not null;
+            windowRuleConfig.MatchTitle is not null ||
+            windowRuleConfig.MatchProcessCommand is not null;
 
           if (!hasMatchingRegex)
             throw new FatalUserException(

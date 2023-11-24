@@ -134,7 +134,8 @@ namespace GlazeWM.Domain.UserConfigs
       {
         return rule.ProcessNameRegex?.IsMatch(window.ProcessName) != false &&
           rule.ClassNameRegex?.IsMatch(window.ClassName) != false &&
-          rule.TitleRegex?.IsMatch(window.Title) != false;
+          rule.TitleRegex?.IsMatch(window.Title) != false &&
+          rule.ProcessCommandRegex?.IsMatch(window.ProcessCommandLine) != false;
       }).ToList();
     }
   }

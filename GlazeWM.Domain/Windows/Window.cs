@@ -3,6 +3,7 @@ using System.Diagnostics;
 using GlazeWM.Domain.Common;
 using GlazeWM.Domain.Common.Enums;
 using GlazeWM.Domain.Containers;
+using GlazeWM.Infrastructure.Utils;
 using GlazeWM.Infrastructure.WindowsApi;
 using static GlazeWM.Infrastructure.WindowsApi.WindowsApiService;
 
@@ -49,6 +50,9 @@ namespace GlazeWM.Domain.Windows
       WindowService.GetProcessOfHandle(Handle)?.ProcessName ?? string.Empty;
 
     public string ClassName => WindowService.GetClassNameOfHandle(Handle);
+    
+    public string ProcessCommandLine =>
+      WindowService.GetProcessOfHandle(Handle)?.ProcessCommandLine() ?? string.Empty;
 
     public Rect Location => WindowService.GetLocationOfHandle(Handle);
 

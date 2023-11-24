@@ -18,6 +18,10 @@ namespace GlazeWM.Domain.UserConfigs
 
     public Regex TitleRegex => CreateRegex(MatchTitle);
 
+    public string MatchProcessCommand { get; set; }
+
+    public Regex ProcessCommandRegex => CreateRegex(MatchProcessCommand);
+
     public string Command { get; set; }
 
     public List<string> Commands { get; set; } = new List<string>();
